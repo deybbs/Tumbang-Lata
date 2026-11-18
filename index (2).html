@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tumbang Lata</title>
+  <meta name="description" content="A browser version of the classic Filipino street game Tumbang Lata (Tumbang Preso).">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="wrap">
+    <header class="hud">
+      <h1>Tumbang <span>Lata</span></h1>
+      <div class="stats">
+        <div class="stat"><small>Score</small><b id="score">0</b></div>
+        <div class="stat"><small>Level</small><b id="level">1</b></div>
+        <div class="stat"><small>Role</small><b id="role" class="role">Tagahagis</b></div>
+        <div class="stat"><small>Lives</small><b id="lives" class="lives">♥♥♥</b></div>
+        <div class="stat"><small>Best</small><b id="best">0</b></div>
+      </div>
+    </header>
+
+    <div class="stage">
+      <canvas id="game" width="960" height="600" aria-label="Tumbang Lata game field"></canvas>
+      <div class="overlay" id="overlay">
+        <h2 id="ovTitle">Tumbang <span>Lata</span></h2>
+        <p id="ovText">Knock down the can with your tsinelas, grab it back, and run behind the line before the <b>taya</b> tags you. Get caught and <b>you</b> become the taya!</p>
+        <button id="startBtn" type="button">Laro na!</button>
+      </div>
+    </div>
+
+    <section class="help">
+      <div>
+        <h3>🎯 Throw</h3>
+        <p>Click/touch and <b>drag backward</b>, then release to throw your tsinelas — like a slingshot.</p>
+      </div>
+      <div>
+        <h3>🏃 Run</h3>
+        <p>Move with <b>WASD</b> / <b>arrow keys</b>, or <b>hold</b> on the field to run toward your finger.</p>
+      </div>
+      <div>
+        <h3>⚠️ Rules</h3>
+        <p>The taya can only tag while the <b>can is standing</b> and the thrower is <b>past the line</b>. Knock it down and make it back = <b>+1</b>.</p>
+      </div>
+      <div>
+        <h3>🔄 Switch roles</h3>
+        <p>Tagged? You lose a life and become the <b>TAYA</b>. Pick up the fallen can, put it back in the circle, then tag the CPU for <b>+2</b> to throw again.</p>
+      </div>
+    </section>
+
+    <footer>Made by Ethantzy · A Filipino street game, reimagined in vanilla JS</footer>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>

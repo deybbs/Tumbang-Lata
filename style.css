@@ -1,0 +1,206 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #13110f;
+  --panel: #1e1a16;
+  --line: #3a322a;
+  --text: #f3ebe0;
+  --muted: #b3a593;
+  --accent: #ffc83d;
+  --red: #e5483b;
+}
+
+body {
+  background: radial-gradient(circle at 50% 0%, #2a221a 0%, var(--bg) 60%);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  min-height: 100vh;
+}
+
+.wrap {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 20px 14px 32px;
+}
+
+/* ---------- HUD ---------- */
+.hud {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+h1 {
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+h1 span,
+h2 span {
+  color: var(--accent);
+}
+
+.stats {
+  display: flex;
+  gap: 8px;
+}
+
+.stat {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 6px 14px;
+  text-align: center;
+  min-width: 70px;
+}
+
+.stat small {
+  display: block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--muted);
+}
+
+.stat b {
+  font-size: 1.2rem;
+}
+
+.role {
+  font-size: 1rem !important;
+  color: #8dc4ff;
+}
+
+.role.is-taya {
+  color: #ff8a7a;
+}
+
+.lives {
+  color: var(--red);
+  letter-spacing: 2px;
+}
+
+/* ---------- Stage ---------- */
+.stage {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 960 / 600;
+  touch-action: none;
+  cursor: crosshair;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 24px;
+  text-align: center;
+  background: rgba(15, 12, 9, 0.78);
+  backdrop-filter: blur(3px);
+  transition: opacity 0.25s;
+}
+
+.overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.overlay h2 {
+  font-size: clamp(2rem, 6vw, 3.4rem);
+  font-weight: 900;
+}
+
+.overlay p {
+  max-width: 460px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.overlay p b {
+  color: var(--text);
+}
+
+button {
+  background: var(--accent);
+  color: #1b1408;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 34px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 6px 0 #b8861a;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 0 #b8861a;
+}
+
+button:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #b8861a;
+}
+
+/* ---------- Help ---------- */
+.help {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.help div {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+
+.help h3 {
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+.help p {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.help b {
+  color: var(--text);
+}
+
+footer {
+  margin-top: 22px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
